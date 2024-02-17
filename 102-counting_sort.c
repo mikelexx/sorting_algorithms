@@ -35,4 +35,6 @@ void counting_sort(int *array, size_t size)
 		array_copy[--freq[array[i]]] = array[i];
 	for (i = 0; i < size; i++)
 		array[i] =  array_copy[i];
+	free(freq);
+	free(array_copy);
 }
