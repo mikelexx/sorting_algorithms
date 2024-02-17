@@ -8,16 +8,14 @@
 void counting_sort(int *array, size_t size)
 {
 	size_t i;
-	int min = 0, max = 0, freq_size, j, *freq = NULL, *array_copy = NULL;
+	int max = 0, freq_size, j, *freq = NULL, *array_copy = NULL;
 
 	for (i = 0; i < size; i++)
 	{
-		if (array[i] < min)
-			min = array[i];
 		if (array[i] > max)
 			max = array[i];
 	}
-	freq_size = (max - min) + 1;
+	freq_size = max + 1;
 	freq = malloc(sizeof(int) * freq_size);
 	array_copy = malloc(sizeof(int) * size);
 	if (freq == NULL || array_copy == NULL)
@@ -29,12 +27,12 @@ void counting_sort(int *array, size_t size)
 	for (j = 0; j < freq_size; j++)
 		freq[j] = 0;
 	for (i = 0; i < size; i++)
-		freq[array[i] - min]++;
+		freq[array[i]]++;
 	for (j = 1; j < freq_size; j++)
 		freq[j] = freq[j - 1] + freq[j];
 	print_array(freq, freq_size);
 	for (i = size - 1; (int)i >= 0; i--)
-		array_copy[--freq[array[i] - min]] = array[i];
+		array_copy[--freq[array[i]]] = array[i];
 	for (i = 0; i < size; i++)
 		array[i] =  array_copy[i];
 }
