@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 /**
  * build_max_heap - rearanges a given array to form max-heap.
  * @array: array to be rearranged.
