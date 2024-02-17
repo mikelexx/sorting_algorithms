@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 /**
  * partition - usess the Lomuto scheme to partition the array into two
  * sub arrays where the left elements are all less that or equal to the
