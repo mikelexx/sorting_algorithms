@@ -40,6 +40,9 @@ void heap_sort(int *array, size_t size)
 	size_t last_parent_idx, i;
 	int holder;
 
+	if (size < 2)
+		return;
+
 	for (last_parent_idx = (size - 1) / 2;
 			(int)last_parent_idx >= 0; last_parent_idx--)
 		build_max_heap(array, last_parent_idx, size, size);

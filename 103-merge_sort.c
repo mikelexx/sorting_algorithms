@@ -104,6 +104,8 @@ void merge_sort(int *array, size_t size)
 	int *copy = NULL;
 	size_t i;
 
+	if (array == NULL || size < 2)
+		return;
 	copy = malloc(sizeof(int) * size);
 	if (copy  == NULL)
 		return;
