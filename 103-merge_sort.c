@@ -112,4 +112,5 @@ void merge_sort(int *array, size_t size)
 		copy[i] = array[i];
 	}
 	divide_sort(array, 0, size - 1, copy);
+	free(copy);
 }
